@@ -268,4 +268,19 @@ static inline int hex_to_val(char c) {
   return -1;
 }
 
+#define HTONS(n) ((((n) & 0xFF) << 8) | (((n) & 0xFF00) >> 8))
+
+#define AF_INET 2
+#define SOCK_STREAM 1
+
+#define SOL_SOCKET 1
+#define SO_REUSEADDR 2
+
+struct sockaddr_in {
+  uint16_t sin_family;
+  uint16_t sin_port;
+  uint32_t sin_addr;
+  uint8_t sin_zero[8];
+};
+
 #endif
