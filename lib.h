@@ -274,7 +274,19 @@ static inline int hex_to_val(char c) {
 #define SOCK_STREAM 1
 
 #define SOL_SOCKET 1
+#define SOL_TCP 6
 #define SO_REUSEADDR 2
+
+#define SHUT_RD 0
+#define SHUT_WR 1
+#define SHUT_RDWR 2
+
+#define TCP_CORK 3
+
+#define TCP_FASTOPEN 23
+
+#define MSG_NOSIGNAL 16384
+#define MSG_MORE 32768
 
 struct sockaddr_in {
   uint16_t sin_family;
