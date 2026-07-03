@@ -1,5 +1,4 @@
-#include "lib.h"
-#include <sys/syscall.h>
+#include "lib/lib.h"
 
 #define PORT 8080
 
