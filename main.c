@@ -1,6 +1,8 @@
 #include "lib/lib.h"
 
+#ifndef PORT
 #define PORT 8080
+#endif
 
 #define MAX_SERVICES 256 // Макс. количество уникальных сервисов
 #define MAX_SUBS 4096    // Макс. общее количество подписок (fd <=> сервис)
