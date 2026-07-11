@@ -216,7 +216,7 @@ void send_to_all(const char *service_name, char *body, size_t body_size) {
 
   struct sockaddr_in addr = {0};
   addr.sin_family = AF_INET;
-  addr.sin_port = 0x901F;
+  addr.sin_port = HTONS(PORT);
   addr.sin_addr = 0;
 
   int reuse = 1;
@@ -239,7 +239,7 @@ void send_to_all(const char *service_name, char *body, size_t body_size) {
     exit(1);
   }
 
-  WRITE_LITERAL(STDERR_FILENO, "Listening 0.0.0.0:8080\n");
+  print(&STDERR_IO, "Listening 0.0.0.0:", PORT, "\n");
   while (1) {
     int client_fd = syscall(SYS_accept, server_fd, 0, 0);
     if (client_fd < 0)
