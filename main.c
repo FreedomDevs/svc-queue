@@ -1,4 +1,4 @@
-#include "lib/lib.h"
+#include "mikinolibc/lib.h"
 
 #ifndef PORT
 #define PORT 8080
@@ -203,7 +203,7 @@ void send_to_all(const char *service_name, char *body, size_t body_size) {
   }
 }
 
-[[noreturn]] int main(int argc, char **argv) {
+noreturn int main(int argc, char **argv) {
   init_system();
 
   int server_fd;

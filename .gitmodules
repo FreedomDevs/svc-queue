@@ -1,0 +1,3 @@
+[submodule "mikinolibc"]
+	path = mikinolibc
+	url = https://github.com/mikinol/mikinolibc.git
